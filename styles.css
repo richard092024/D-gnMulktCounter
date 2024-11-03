@@ -1,0 +1,55 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Title */
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #4a90e2;
+}
+
+/* Section Titles */
+.container h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Time and Fine Display */
+.time-display,
+.fine-display {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #333;
+}
+
+span {
+  font-weight: bold;
+  color: #be3333;
+}

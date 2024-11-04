@@ -8,16 +8,24 @@ function updateCounters() {
   const now = new Date().getTime();
   const elapsedTime = now - startDate;
 
-  // Beregn antall dager siden startdato
-  const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+  // Beregn måneder og resterende dager siden startdato
+  const daysSinceStart = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+  const months = Math.floor(daysSinceStart / 30); // Antall hele måneder
+  const days = daysSinceStart % 30; // Resterende dager etter hele måneder
+
+  // Oppdater antall måneder og dager i HTML
+  document.getElementById("months").textContent = months;
   document.getElementById("days").textContent = days;
 
-  // Beregn påløpt mulkt basert på sekunder
+  // Beregn påløpt mulkt og oppdater
   const fineAmount = (elapsedTime / 1000) * finePerSecond;
-  document.getElementById("amount").textContent = fineAmount.toLocaleString(
-    "nb-NO",
-    { minimumFractionDigits: 2, maximumFractionDigits: 2 }
-  );
+  const formattedFineAmount = fineAmount.toLocaleString("nb-NO", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  // Oppdater totalbeløp
+  document.getElementById("amount").textContent = formattedFineAmount;
 }
 
 // Oppdaterer tellerne hvert sekund
